@@ -1,6 +1,6 @@
 # OpenMeeting
 
-会议管理系统。
+会议管理 · 视频会议 · 基于 WebRTC
 
 - **frontend** — Vue 3 + Element Plus
 - **backend** — ASP.NET Core + PostgreSQL + Redis
