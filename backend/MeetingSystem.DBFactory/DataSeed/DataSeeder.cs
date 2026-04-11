@@ -49,7 +49,7 @@ public static class DataSeeder
                             m.GetParameters().Length == 1);
             var anyAsync = anyMethod.MakeGenericMethod(entityType);
 
-            var hasDataTask = (Task)anyAsync.Invoke(null, new object[] { dbSet })!;
+            var hasDataTask = (Task)anyAsync.Invoke(null, [dbSet!])!;
             await hasDataTask.ConfigureAwait(false);
 
             var hasDataResult = hasDataTask.GetType().GetProperty("Result")!.GetValue(hasDataTask)!;
