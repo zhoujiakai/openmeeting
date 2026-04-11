@@ -1,6 +1,6 @@
 # Frontend
 
-> Based on [vue3-element-admin](https://github.com/asaasa/vue3-element-admin) by [Asa](https://github.com/asaasa), thanks for the great work.
+> Based on [vue3-element-admin](https://gitee.com/asaasa/vue3-element-admin) by [Asa](https://gitee.com/asaasa), thanks for the great work.
 
 Vue 3 + Element Plus + Vue Router + Vuex
 
