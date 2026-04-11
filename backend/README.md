@@ -10,7 +10,9 @@ dotnet build              # 构建
 dotnet run --project MeetingSystem.WEB  # 启动（自动种子数据初始化）
 ```
 
-## 项目概览
+## 目录结构
+
+### 简洁版
 
 ```
 MeetingSystem.WEB        : Web API 入口（控制器、中间件、配置）
@@ -21,7 +23,7 @@ MeetingSystem.Model      : 数据库实体 + 请求/响应 DTO
 MeetingSystem.Common     : 公共工具（R、JsonHelper、RedisHelper）
 ```
 
-## 详细目录结构
+### 详细版
 
 ```
 backend/
