@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.WEB", "MeetingSystem.WEB\MeetingSystem.WEB.csproj", "{E10EAC81-3F51-4352-83AD-1B9FA27A3E4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.Model", "MeetingSystem.Model\MeetingSystem.Model.csproj", "{89AC90C9-54D5-45D1-B55F-16435952C347}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.DBFactory", "MeetingSystem.DBFactory\MeetingSystem.DBFactory.csproj", "{D0C0AE9D-DDC8-4329-AE37-7C140E10930E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.IService", "MeetingSystem.IService\MeetingSystem.IService.csproj", "{C5966BDD-6240-487F-990A-E10377AC0E2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.Common", "MeetingSystem.Common\MeetingSystem.Common.csproj", "{E29A95B0-8589-4612-A42C-6CEDD09BDA3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingSystem.Service", "MeetingSystem.Service\MeetingSystem.Service.csproj", "{FD5803AE-5D5A-4094-8F93-1BA7E3B85716}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3322D70E-CDE4-4182-9869-F2CDDCE3DBB3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E10EAC81-3F51-4352-83AD-1B9FA27A3E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10EAC81-3F51-4352-83AD-1B9FA27A3E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10EAC81-3F51-4352-83AD-1B9FA27A3E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10EAC81-3F51-4352-83AD-1B9FA27A3E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89AC90C9-54D5-45D1-B55F-16435952C347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AC90C9-54D5-45D1-B55F-16435952C347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AC90C9-54D5-45D1-B55F-16435952C347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AC90C9-54D5-45D1-B55F-16435952C347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C0AE9D-DDC8-4329-AE37-7C140E10930E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C0AE9D-DDC8-4329-AE37-7C140E10930E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C0AE9D-DDC8-4329-AE37-7C140E10930E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C0AE9D-DDC8-4329-AE37-7C140E10930E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5966BDD-6240-487F-990A-E10377AC0E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5966BDD-6240-487F-990A-E10377AC0E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5966BDD-6240-487F-990A-E10377AC0E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5966BDD-6240-487F-990A-E10377AC0E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29A95B0-8589-4612-A42C-6CEDD09BDA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29A95B0-8589-4612-A42C-6CEDD09BDA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29A95B0-8589-4612-A42C-6CEDD09BDA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29A95B0-8589-4612-A42C-6CEDD09BDA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD5803AE-5D5A-4094-8F93-1BA7E3B85716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5803AE-5D5A-4094-8F93-1BA7E3B85716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5803AE-5D5A-4094-8F93-1BA7E3B85716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5803AE-5D5A-4094-8F93-1BA7E3B85716}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF7D1CA2-1590-4582-A624-552482B70C98}
+	EndGlobalSection
+EndGlobal

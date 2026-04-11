@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "GroupName": "磁力探测",
+    "Status": 1
+  },
+  {
+    "Id": 2,
+    "GroupName": "视频图像处理",
+    "Status": 1
+  }
+]

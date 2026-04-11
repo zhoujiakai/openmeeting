@@ -66,3 +66,9 @@ appsettings.Development.json
 .env
 .env.*
 !.env.example
+
+# IDE
+.idea/
+
+# Code review
+code_review.md

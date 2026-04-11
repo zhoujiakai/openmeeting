@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "userName": "管理员",
+    "password": "123456",
+    "roleName": "管理员",
+    "groupName": "",
+    "status": 1
+  },
+  {
+    "id": 2,
+    "userName": "赵老师",
+    "password": "123456",
+    "roleName": "老师",
+    "groupName": "磁力探测",
+    "status": 1
+  },
+  {
+    "id": 3,
+    "userName": "张三",
+    "password": "123456",
+    "roleName": "小组管理员",
+    "groupName": "磁力探测",
+    "status": 1
+  },
+  {
+    "id": 4,
+    "userName": "李四",
+    "password": "123456",
+    "roleName": "学生",
+    "groupName": "磁力探测",
+    "status": 1
+  },
+  {
+    "id": 5,
+    "userName": "王五",
+    "password": "123456",
+    "roleName": "学生",
+    "groupName": "磁力探测",
+    "status": 1
+  },
+  {
+    "id": 6,
+    "userName": "赵六",
+    "password": "123456",
+    "roleName": "学生",
+    "groupName": "视频图像处理",
+    "status": 1
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "Theme": "张三的第10周报告",
+    "GroupName": "磁力探测",
+    "UserName": "张三",
+    "DownloadCount": 54,
+    "UploadDate": "2024-04-15T10:00:00Z",
+    "WorkContent": "完成了需求分析，技术选型，查阅了系统设计的文献",
+    "WorkSchedule": "进一步细化分析算法流程和系统结构，搭建系统脚手架。",
+    "ProblemAndSolution": "webrtc网络实时通信需要部署后台服务器以及解决网络穿透问题",
+    "FileUrl": "C:\\Users\\zhoujk\\Downloads\\Wireshark-4.2.5-x64.exe",
+    "Status": 1,
+    "TeacherComment": "该生这周完成了系统的框架搭建，实现了部分功能，下一步会对系统进行单元测试。"
+  },
+  {
+    "Id": 2,
+    "Theme": "报告2",
+    "GroupName": "磁力探测",
+    "UserName": "张三",
+    "DownloadCount": 23,
+    "UploadDate": "2024-04-15T10:00:00Z",
+    "WorkContent": "完成了需求分析，技术选型，查阅了系统设计的文献",
+    "WorkSchedule": "进一步细化分析算法流程和系统结构，搭建系统脚手架。",
+    "ProblemAndSolution": "webrtc网络实时通信需要部署后台服务器以及解决网络穿透问题",
+    "FileUrl": "C:\\Users\\zhoujk\\Downloads\\Wireshark-4.2.5-x64.exe",
+    "Status": 1,
+    "TeacherComment": "该生这周完成了系统的框架搭建，实现了部分功能，下一步会对系统进行单元测试。"
+  },
+  {
+    "Id": 3,
+    "Theme": "Product Design",
+    "GroupName": "磁力探测",
+    "UserName": "李四",
+    "DownloadCount": 55,
+    "UploadDate": "2024-04-15T10:00:00Z",
+    "WorkContent": "完成了需求分析，技术选型，查阅了系统设计的文献",
+    "WorkSchedule": "进一步细化分析算法流程和系统结构，搭建系统脚手架。",
+    "ProblemAndSolution": "webrtc网络实时通信需要部署后台服务器以及解决网络穿透问题",
+    "FileUrl": "C:\\Users\\zhoujk\\Downloads\\Wireshark-4.2.5-x64.exe",
+    "Status": 1,
+    "TeacherComment": "该生这周完成了系统的框架搭建，实现了部分功能，下一步会对系统进行单元测试。"
+  },
+  {
+    "Id": 4,
+    "Theme": "Software Development",
+    "GroupName": "磁力探测",
+    "UserName": "王五",
+    "DownloadCount": 32,
+    "UploadDate": "2024-04-15T10:00:00Z",
+    "WorkContent": "完成了需求分析，技术选型，查阅了系统设计的文献",
+    "WorkSchedule": "进一步细化分析算法流程和系统结构，搭建系统脚手架。",
+    "ProblemAndSolution": "webrtc网络实时通信需要部署后台服务器以及解决网络穿透问题",
+    "FileUrl": "C:\\Users\\zhoujk\\Downloads\\Wireshark-4.2.5-x64.exe",
+    "Status": 1,
+    "TeacherComment": "该生这周完成了系统的框架搭建，实现了部分功能，下一步会对系统进行单元测试。"
+  }
+]

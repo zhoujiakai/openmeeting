@@ -13,14 +13,14 @@ MeetingSystem.Common     : 公共工具
 MeetingSystem.EfCore     : EF Core 配置
 ```
 
-```bash
-dotnet restore            # 还原依赖
-dotnet build              # 构建
-dotnet run --project MeetingSystem.WEB  # 启动
-```
-
 首次运行前需先启动依赖服务（见 `../infra/`），然后执行数据库迁移：
 
 ```bash
 dotnet ef database update --project MeetingSystem.DBFactory --startup-project MeetingSystem.WEB
+```
+
+```bash
+dotnet restore            # 还原依赖
+dotnet build              # 构建
+dotnet run --project MeetingSystem.WEB  # 启动
 ```

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.7.33" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingSystem.Common\MeetingSystem.Common.csproj" />
+    <ProjectReference Include="..\MeetingSystem.DBFactory\MeetingSystem.DBFactory.csproj" />
+    <ProjectReference Include="..\MeetingSystem.IService\MeetingSystem.IService.csproj" />
+    <ProjectReference Include="..\MeetingSystem.Model\MeetingSystem.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="File\" />
+  </ItemGroup>
+
+</Project>

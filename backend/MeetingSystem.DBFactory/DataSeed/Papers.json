@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 1,
+    "Title": "综合物探方法在海底光缆探测中的应用研究",
+    "Group": 1,
+    "Authors": "张三;李四",
+    "Journal": "SPG/SEG南京2020年国际地球物理会议论文集（中文）",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 1
+  },
+  {
+    "Id": 2,
+    "Title": "采空区火源位置探测技术现状及发展方向",
+    "Group": 1,
+    "Authors": "张三",
+    "Journal": "中国安全科学学报",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 1
+  },
+  {
+    "Id": 3,
+    "Title": "弱磁探测技术发展现状",
+    "Group": 1,
+    "Authors": "李四",
+    "Journal": ".水雷战与舰船防护,2011(4)",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 1
+  },
+  {
+    "Id": 4,
+    "Title": "Immunohistochemical methods to detect nitrotyrosine",
+    "Group": 1,
+    "Authors": "王五",
+    "Journal": "Methods in enzymology, 1999 - Elsevier",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 1
+  },
+  {
+    "Id": 5,
+    "Title": "Detect to track and track to detect",
+    "Group": 2,
+    "Authors": "王五",
+    "Journal": "Proceedings of the IEEE",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 2
+  },
+  {
+    "Id": 6,
+    "Title": "综合物探方法在海底光缆探测中的应用研究22",
+    "Group": 2,
+    "Authors": "王五",
+    "Journal": "SPG/SEG南京2020年国际地球物理会议论文集（中文）",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 2
+  },
+  {
+    "Id": 7,
+    "Title": "综合物探方法在海底光缆探测中的应用研究33",
+    "Group": 2,
+    "Authors": "张三;王五",
+    "Journal": "SPG/SEG南京2020年国际地球物理会议论文集（中文）",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 2
+  },
+  {
+    "Id": 8,
+    "Title": "综合物探方法在海底光缆探测中的应用研究44",
+    "Group": 2,
+    "Authors": "李四;陈六",
+    "Journal": "SPG/SEG南京2020年国际地球物理会议论文集（中文）",
+    "PublishTime": "2024-01-01T00:00:00",
+    "Type": 2
+  }
+]
