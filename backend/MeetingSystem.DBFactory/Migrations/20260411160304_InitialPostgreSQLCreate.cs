@@ -12,8 +12,12 @@ namespace MeetingSystem.DBFactory.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "meeting_system");
+
             migrationBuilder.CreateTable(
                 name: "groups",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -28,6 +32,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
             migrationBuilder.CreateTable(
                 name: "meeting_infos",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -50,6 +55,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
             migrationBuilder.CreateTable(
                 name: "meeting_reports",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -70,6 +76,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
             migrationBuilder.CreateTable(
                 name: "menu_items",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -91,6 +98,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
             migrationBuilder.CreateTable(
                 name: "roles",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -104,7 +112,8 @@ namespace MeetingSystem.DBFactory.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "user",
+                name: "users",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -118,11 +127,12 @@ namespace MeetingSystem.DBFactory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "weekly_reports",
+                schema: "meeting_system",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -149,25 +159,32 @@ namespace MeetingSystem.DBFactory.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "groups");
+                name: "groups",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "meeting_infos");
+                name: "meeting_infos",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "meeting_reports");
+                name: "meeting_reports",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "menu_items");
+                name: "menu_items",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "roles");
+                name: "roles",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "user");
+                name: "users",
+                schema: "meeting_system");
 
             migrationBuilder.DropTable(
-                name: "weekly_reports");
+                name: "weekly_reports",
+                schema: "meeting_system");
         }
     }
 }

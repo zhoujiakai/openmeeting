@@ -17,6 +17,7 @@ namespace MeetingSystem.DBFactory.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("meeting_system")
                 .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -39,7 +40,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("groups");
+                    b.ToTable("groups", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.Auth.MenuItems", b =>
@@ -84,7 +85,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("menu_items");
+                    b.ToTable("menu_items", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.Auth.Roles", b =>
@@ -104,7 +105,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("roles");
+                    b.ToTable("roles", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.Auth.Users", b =>
@@ -140,7 +141,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("user", (string)null);
+                    b.ToTable("users", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.Meeting.MeetingInfos", b =>
@@ -190,7 +191,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("meeting_infos");
+                    b.ToTable("meeting_infos", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.Meeting.MeetingReports", b =>
@@ -231,7 +232,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("meeting_reports");
+                    b.ToTable("meeting_reports", "meeting_system");
                 });
 
             modelBuilder.Entity("MeetingSystem.Model.Models.WeeklyReport.WeeklyReports", b =>
@@ -285,7 +286,7 @@ namespace MeetingSystem.DBFactory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("weekly_reports");
+                    b.ToTable("weekly_reports", "meeting_system");
                 });
 #pragma warning restore 612, 618
         }

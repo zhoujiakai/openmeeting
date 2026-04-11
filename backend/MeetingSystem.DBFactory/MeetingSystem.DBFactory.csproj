@@ -22,10 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DataSeed\Roles.json">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>roles.cs</LastGenOutput>
-    </None>
+    <Content Include="DataSeed\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

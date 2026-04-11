@@ -1,3 +1,4 @@
+using MeetingSystem.DBFactory.DataSeed;
 using MeetingSystem.DBFactory.Database;
 using MeetingSystem.WEB.Config;
 using MeetingSystem.WEB.Middleware;
@@ -36,6 +37,13 @@ builder.Register();
 
 // 构建 Web 应用程序
 var app = builder.Build();
+
+// 自动执行种子数据初始化
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<MeetingSystemDbContext>();
+    await DataSeeder.SeedAsync(db);
+}
 
 // 启用跨域中间件
 app.UseCors("mycorspolicy");
