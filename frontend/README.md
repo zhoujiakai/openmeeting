@@ -4,14 +4,14 @@
 
 Vue 3 + Element Plus + Vue Router + Vuex
 
-## 启动
+## 快速开始
 
 ```bash
 npm install
 npm run serve
 ```
 
-## 项目目录结构
+## 目录结构
 
 ### 简洁版
 
