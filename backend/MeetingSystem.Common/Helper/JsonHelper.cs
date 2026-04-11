@@ -1,29 +1,39 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace MeetingSystem.Common.Helper
 {
     /// <summary>
-    /// JSON格式转换
+    /// JSON格式转换工具类，提供对象与JSON字符串之间的转换方法
     /// </summary>
     public static class JsonHelper
     {
         /// <summary>
-        /// 转换对象为JSON格式数据
+        /// 将对象序列化为JSON格式字符串
         /// </summary>
+        /// <param name="obj">要序列化的对象</param>
+        /// <returns>JSON格式字符串</returns>
         public static string GetJson(object obj)
         {
             return JsonConvert.SerializeObject(obj);
         }
 
         /// <summary>
-        /// SON格式字符转换为T类型的对象
+        /// 将JSON格式字符串反序列化为指定类型的对象
         /// </summary>
+        /// <typeparam name="T">目标类型</typeparam>
+        /// <param name="jsonStr">JSON格式字符串</param>
+        /// <returns>反序列化后的对象</returns>
         public static T? FromJson<T>(string jsonStr)
         {
             var obj = JsonConvert.DeserializeObject<T>(jsonStr);
             return obj;
         }
 
+        /// <summary>
+        /// 将对象序列化为JSON字符串（扩展方法），忽略循环引用和空值，使用驼峰命名和日期格式化
+        /// </summary>
+        /// <param name="obj">要序列化的对象</param>
+        /// <returns>格式化后的JSON字符串</returns>
         public static string ToJson(this object obj)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
@@ -36,6 +46,12 @@ namespace MeetingSystem.Common.Helper
             return JsonConvert.SerializeObject(obj, settings);
         }
 
+        /// <summary>
+        /// 将JSON字符串反序列化为指定类型的对象（扩展方法），如果字符串为空则返回默认值
+        /// </summary>
+        /// <typeparam name="T">目标类型</typeparam>
+        /// <param name="jsonStr">JSON格式字符串</param>
+        /// <returns>反序列化后的对象</returns>
         public static T? ToObject<T>(this string jsonStr)
         {
             return jsonStr == null ? default : JsonConvert.DeserializeObject<T>(jsonStr);
