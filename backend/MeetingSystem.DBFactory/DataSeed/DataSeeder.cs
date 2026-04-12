@@ -45,11 +45,17 @@ public static class DataSeeder
             var dbSet = prop.GetValue(context);
             var anyMethod = typeof(EntityFrameworkQueryableExtensions)
                 .GetMethods()
-                .First(m => m.Name == nameof(EntityFrameworkQueryableExtensions.AnyAsync) &&
-                            m.GetParameters().Length == 1);
+                .FirstOrDefault(m => m.Name == nameof(EntityFrameworkQueryableExtensions.AnyAsync) &&
+                            m.GetParameters().Length == 1)
+                ?? typeof(EntityFrameworkQueryableExtensions)
+                    .GetMethods()
+                    .First(m => m.Name == nameof(EntityFrameworkQueryableExtensions.AnyAsync));
             var anyAsync = anyMethod.MakeGenericMethod(entityType);
 
-            var hasDataTask = (Task)anyAsync.Invoke(null, [dbSet!])!;
+            var args = anyMethod.GetParameters().Length == 1
+                ? new object[] { dbSet! }
+                : new object[] { dbSet!, CancellationToken.None };
+            var hasDataTask = (Task)anyAsync.Invoke(null, args)!;
             await hasDataTask.ConfigureAwait(false);
 
             var hasDataResult = hasDataTask.GetType().GetProperty("Result")!.GetValue(hasDataTask)!;
@@ -59,13 +65,30 @@ public static class DataSeeder
             // 读取 JSON 文件并反序列化为 List<EntityType>
             var jsonContent = await File.ReadAllTextAsync(jsonPath);
             var listType = typeof(List<>).MakeGenericType(entityType);
-            var data = JsonConvert.DeserializeObject(jsonContent, listType);
+            var data = JsonConvert.DeserializeObject(jsonContent, listType, new JsonSerializerSettings
+            {
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc
+            });
             if (data == null)
                 continue;
 
+            // 如果是 Users 表，对 Password 字段进行 BCrypt 哈希加密
+            if (dbSetName == "Users")
+            {
+                var passwordProp = entityType.GetProperty("Password");
+                if (passwordProp != null)
+                {
+                    foreach (var item in (System.Collections.IEnumerable)data)
+                    {
+                        var plainPassword = (string)passwordProp.GetValue(item)!;
+                        passwordProp.SetValue(item, BCrypt.Net.BCrypt.HashPassword(plainPassword));
+                    }
+                }
+            }
+
             // 调用 DbSet.AddRange
-            var addRangeMethod = prop.PropertyType.GetMethod("AddRange");
-            addRangeMethod!.Invoke(dbSet, new[] { data });
+            var addRangeMethod = prop.PropertyType.GetMethod("AddRange", [typeof(IEnumerable<>).MakeGenericType(entityType)]);
+            addRangeMethod!.Invoke(dbSet, [data]);
 
             await context.SaveChangesAsync();
         }

@@ -1,14 +1,32 @@
 # Frontend
 
-> Based on [vue3-element-admin](https://gitee.com/asaasa/vue3-element-admin) by [Asa](https://gitee.com/asaasa), thanks for the great work.
+> 基于 [vue3-element-admin](https://gitee.com/asaasa/vue3-element-admin)（作者：[Asa](https://gitee.com/asaasa)），感谢优秀的开源项目。
+>
+> WebRTC 视频会议功能参考自 [WebRTC视频会议系统源码](https://www.bilibili.com/video/BV1GN411f7L2)（B站 UP 主：顶级云加），感谢分享。
 
-Vue 3 + Element Plus + Vue Router + Vuex
+Vue 3 + Element Plus + Vue Router + Vuex + Socket.IO
 
 ## 快速开始
 
 ```bash
 npm install
 npm run serve
+```
+
+`npm run serve` 会同时启动：
+- **前端开发服务器** — http://localhost:8086
+- **Socket.IO 信令服务器** — http://localhost:3001（WebRTC 视频会议）
+
+## 配置说明
+
+配置文件位于 `src/config.js`：
+
+```js
+module.exports = {
+    dev_mock: false,                       // 开发环境是否启用 mock
+    pro_mock: true,                        // 生产环境是否启用 mock
+    socketServerUrl: "http://localhost:3001", // Socket.IO 信令服务器地址
+};
 ```
 
 ## 目录结构
@@ -29,6 +47,7 @@ frontend/
 │   ├── styles/              # 样式文件
 │   ├── utils/               # 工具函数
 │   ├── views/               # 页面视图（登录、首页、会议室、系统管理等）
+│   ├── socket-server.js     # Socket.IO 信令服务器（WebRTC）
 │   ├── App.vue              # 根组件
 │   ├── config.js            # 全局配置
 │   └── main.js              # 入口文件
@@ -87,6 +106,12 @@ frontend/
 │   │   ├── globalRoutes.js          # 全局路由
 │   │   ├── mainRoutes.js            # 主路由
 │   │   └── buttonRoutes.js          # 按钮路由
+│   ├── socket-server.js             # Socket.IO 信令服务器
+│   │                                 # - WebRTC 房间管理
+│   │                                 # - 用户加入/离开房间
+│   │                                 # - 信令转发（offer/answer/ICE）
+│   │                                 # - 聊天消息广播
+│   │                                 # - 屏幕共享
 │   ├── store/                       # Vuex 状态管理
 │   │   ├── index.js                 # Store 入口
 │   │   ├── getters.js               # Getters

@@ -96,7 +96,7 @@ namespace MeetingSystem.Service.WeeklyReport
             );
 
             var total = query.Count(); // 总记录数
-            var list = query.Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
+            var list = query.OrderBy(a => a.Id).Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
             return new PageDto().SetList(list).SetTotal(total);
         }
     }

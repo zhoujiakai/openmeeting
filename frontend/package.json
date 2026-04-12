@@ -1,0 +1,66 @@
+{
+    "name": "vue3-element-admin",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "NODE_NO_WARNINGS=1 vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
+        "@vueuse/core": "^11.0.0",
+        "ali-oss": "^6.21.0",
+        "axios": "^1.8.4",
+        "core-js": "^3.40.0",
+        "dayjs": "^1.11.13",
+        "echarts": "^5.6.0",
+        "element-plus": "^2.9.4",
+        "normalize.css": "^8.0.1",
+        "nprogress": "^0.2.0",
+        "qs": "^6.14.0",
+        "socket.io": "^4.8.3",
+        "socket.io-client": "^4.8.1",
+        "vue": "^3.5.13",
+        "vue-router": "^4.5.0",
+        "vuex": "^4.1.0",
+        "xe-utils": "^3.5.16"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.26.8",
+        "@vue/babel-plugin-jsx": "^1.2.2",
+        "@vue/cli-plugin-babel": "~5.0.8",
+        "@vue/cli-plugin-eslint": "~5.0.8",
+        "@vue/cli-plugin-router": "~5.0.8",
+        "@vue/cli-plugin-vuex": "~5.0.8",
+        "@vue/cli-service": "~5.0.8",
+        "@vue/compiler-sfc": "^3.5.13",
+        "@vue/eslint-config-prettier": "^9.0.0",
+        "compression-webpack-plugin": "^11.1.0",
+        "eslint": "^8.57.1",
+        "eslint-plugin-prettier": "^5.2.3",
+        "eslint-plugin-vue": "^9.32.0",
+        "lint-staged": "^15.4.3",
+        "mockjs": "^1.1.0",
+        "prettier": "^3.5.3",
+        "sass": "^1.85.1",
+        "sass-loader": "^16.0.5",
+        "terser-webpack-plugin": "^5.3.11",
+        "vue-cli-plugin-axios": "^0.0.4",
+        "vue-cli-plugin-element-plus": "^0.0.13"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx,vue}": [
+            "vue-cli-service lint --fix"
+        ]
+    },
+    "overrides": {
+        "cross-spawn": "^7.0.6",
+        "postcss": "^8.4.31",
+        "serialize-javascript": "^7.0.5",
+        "webpack-dev-server": "^5.2.1"
+    }
+}

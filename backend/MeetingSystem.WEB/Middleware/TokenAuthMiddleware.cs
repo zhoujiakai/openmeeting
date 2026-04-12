@@ -76,6 +76,8 @@ namespace MeetingSystem.WEB.Middleware
                     // 从键名 "auth:username" 中提取用户名，存入上下文供后续使用
                     var userName = key.ToString().Substring("auth:".Length);
                     context.Items["UserName"] = userName;
+                    // 每次请求验证通过后刷新过期时间，保持 token 不过期
+                    db.KeyExpire(key, TimeSpan.FromDays(7));
                     break;
                 }
             }

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MeetingSystem.DBFactory.Migrations
 {
     [DbContext(typeof(MeetingSystemDbContext))]
-    [Migration("20260411160304_InitialPostgreSQLCreate")]
-    partial class InitialPostgreSQLCreate
+    [Migration("20260412063802_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

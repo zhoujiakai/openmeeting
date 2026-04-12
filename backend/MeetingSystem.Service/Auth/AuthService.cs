@@ -142,7 +142,7 @@ namespace MeetingSystem.Service.Auth
         public int AddUsers(Users user)
         {
             user.Status = 1; // 设置用户状态为启用
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password); // 对密码进行哈希加密
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password); // BCrypt 哈希加密
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
             return 0;
@@ -181,7 +181,9 @@ namespace MeetingSystem.Service.Auth
         /// <returns>用户实体对象</returns>
         public Users GetUsers(int id)
         {
-            return _dbContext.Users.First(a => a.Id == id);
+            var user = _dbContext.Users.First(a => a.Id == id);
+            user.Password = "";
+            return user;
         }
 
         /// <summary>
@@ -190,7 +192,9 @@ namespace MeetingSystem.Service.Auth
         /// <returns>用户列表</returns>
         public List<Users> GetUsers()
         {
-            return _dbContext.Users.Where(a => a.RoleName != "管理员").ToList();
+            var users = _dbContext.Users.Where(a => a.RoleName != "管理员").ToList();
+            users.ForEach(u => u.Password = "");
+            return users;
         }
 
         /// <summary>
@@ -208,13 +212,13 @@ namespace MeetingSystem.Service.Auth
                 .Where(a => !string.IsNullOrEmpty(page.UserName) ? a.UserName.Contains(page.UserName) : true);
 
             var total = query.Count(); // 总记录数
-            var list = query.Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
+            var list = query.OrderBy(a => a.Id).Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
+            list.ForEach(u => u.Password = "");
             return new PageDto().SetList(list).SetTotal(total);
         }
 
         /// <summary>
         /// 添加新分组
-        /// </summary>
         /// <param name="group">分组实体对象</param>
         /// <returns>始终返回 0</returns>
         public int AddGroups(Groups group)
@@ -289,7 +293,7 @@ namespace MeetingSystem.Service.Auth
                 .Where(a => !string.IsNullOrEmpty(page.GroupName) ? a.GroupName.Contains(page.GroupName) : true);
 
             var total = query.Count(); // 总记录数
-            var list = query.Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
+            var list = query.OrderBy(a => a.Id).Skip((page.Page - 1) * page.Limit).Take(page.Limit).ToList(); // 分页查询
             return new PageDto().SetList(list).SetTotal(total);
         }
 

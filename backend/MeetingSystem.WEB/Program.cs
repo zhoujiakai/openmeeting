@@ -42,6 +42,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MeetingSystemDbContext>();
+    await db.Database.MigrateAsync();
     await DataSeeder.SeedAsync(db);
 }
 
