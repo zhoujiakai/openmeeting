@@ -1,19 +1,15 @@
 /**
  * 使用阿里云对象存储做断点上传
+ * OSS 配置通过 .env 文件中的 VUE_APP_OSS_* 变量注入
  */
-// accessKeyId: process.env.OSS_ACCESS_KEY_ID,
-// accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET,
 export const ossFileUpload = async (filename, filePath) => {
     const OSS = require("ali-oss");
 
     const client = new OSS({
-        // yourregion填写Bucket所在地域。以华东1（杭州）为例，Region填写为oss-cn-hangzhou。
-        region: "oss-cn-qingdao",
-        // 从环境变量中获取访问凭证。运行本代码示例之前，请确保已设置环境变量OSS_ACCESS_KEY_ID和OSS_ACCESS_KEY_SECRET。
-        accessKeyId: process.env.OSS_ACCESS_KEY_ID,
-        accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET,
-        // 填写Bucket名称。
-        bucket: "meeting",
+        region: process.env.VUE_APP_OSS_REGION,
+        accessKeyId: process.env.VUE_APP_OSS_ACCESS_KEY_ID,
+        accessKeySecret: process.env.VUE_APP_OSS_ACCESS_KEY_SECRET,
+        bucket: process.env.VUE_APP_OSS_BUCKET,
     });
     // yourfilepath填写已上传文件所在的本地路径。
     // const filePath = "yourfilepath";
@@ -51,13 +47,10 @@ export const ossFileUpload = async (filename, filePath) => {
 //     const OSS = require("ali-oss");
 //     const fs = require("fs");
 //     const client = new OSS({
-//         // yourRegion填写Bucket所在地域。以华东1（杭州）为例，Region填写为oss-cn-hangzhou。
-//         region: "oss-cn-qingdao",
-//         // 从环境变量中获取访问凭证。运行本代码示例之前，请确保已设置环境变量OSS_ACCESS_KEY_ID和OSS_ACCESS_KEY_SECRET。
-//         accessKeyId: process.env.OSS_ACCESS_KEY_ID,
-//         accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET,
-//         // 填写Bucket名称。
-//         bucket: "meeting",
+//         region: process.env.VUE_APP_OSS_REGION,
+//         accessKeyId: process.env.VUE_APP_OSS_ACCESS_KEY_ID,
+//         accessKeySecret: process.env.VUE_APP_OSS_ACCESS_KEY_SECRET,
+//         bucket: process.env.VUE_APP_OSS_BUCKET,
 //     });
 
 //     async function getStream () {
