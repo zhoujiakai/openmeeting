@@ -21,7 +21,7 @@ module.exports = {
         port: 8086,
         proxy: {
             "/api": {
-                target: "https://localhost:7099",
+                target: process.env.VUE_APP_API_TARGET || "https://localhost:7099",
                 // pathRewrite: {
                 //     "^/api": "/api",
                 // },

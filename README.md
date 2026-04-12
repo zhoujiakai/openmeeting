@@ -8,16 +8,34 @@
 
 ## 环境要求
 
+### Docker 一键启动（推荐）
+
+只需要 [Docker](https://www.docker.com/)
+
+### 本地开发
+
 - [Docker](https://www.docker.com/) — 运行 PostgreSQL、Redis 等基础设施
 - [.NET SDK 10.0](https://dotnet.microsoft.com/download) — 后端开发与运行
 - [Node.js](https://nodejs.org/) ≥ 16 — 前端开发与运行（含 npm）
 
 ## 快速开始
 
+### 方式一：Docker 一键启动
+
+```bash
+# 准备环境配置
+cp infra/.env.example infra/.env
+
+# 一键启动所有服务
+cd infra && docker-compose up -d
+```
+
+### 方式二：本地开发
+
 ```bash
 # 1. 准备环境配置
-cp infra/.env.example infra/.env          # Docker 基础设施配置（按需修改密码）
-cp frontend/.env.local.example frontend/.env.local  # 前端 OSS 等配置（按需修改）
+cp infra/.env.example infra/.env
+cp frontend/.env.local.example frontend/.env.local
 
 # 2. 启动基础设施（PostgreSQL、Redis、pgAdmin）
 cd infra && docker-compose up -d
@@ -33,7 +51,7 @@ cd frontend && npm install && npm run serve
 
 - 前端：http://localhost:8086
 - Socket.IO 信令服务器：http://localhost:3001
-- 后端：http://localhost:7099
+- 后端：http://localhost:5000（Docker）/ http://localhost:7099（本地开发）
 - PostgreSQL：localhost:5432
 - Redis：localhost:6379
 - pgAdmin（数据库可视化管理）：http://localhost:5050 ，登录账密 `admin@admin.com` / `admin123`。添加服务器时 Host 填 `postgres`，其余连接信息同 `infra/.env`
